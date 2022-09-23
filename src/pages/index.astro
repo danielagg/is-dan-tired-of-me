@@ -1,17 +1,42 @@
 ---
 import Layout from "../layouts/Layout.astro";
+
+const getRandomReason = () => {
+  const possibleReasons = [
+    "Unfortunately, Dan is not tired of you right now.",
+    "Nope, he is not tired of you.",
+    "Still nope. Refresh later!",
+    "Nope, nope, noppity-nope.",
+    "That's it: just no.",
+    "Dan is tired of many things. You? Nope.",
+  ];
+
+  const min = 0;
+  const max = possibleReasons.length - 1;
+
+  const randomNum = Math.floor(Math.random() * (max - min + 1) + min);
+
+  return possibleReasons[randomNum];
+};
 ---
 
 <Layout title="Is Dan tired of Me?">
   <main
-    class="flex flex-col items-center justify-between w-screen h-screen bg-slate-800 text-slate-300 px-12 lg:px-0"
+    class="flex flex-col items-center justify-between w-screen h-screen bg-[length:400%_400%] bg-gradient-to-r from-violet-700 to-amber-800 text-slate-200 px-12 lg:px-0 animate-gradient"
   >
     <div class="h-full flex flex-col justify-center items-center text-center">
-      <h1 class="text-9xl font-bold">No.</h1>
-      <p class="text-lg mt-12">
-        Unfortunately, Dan is not tired of you right now.
-      </p>
-      <p class="text-xs mt-4 text-slate-400">Please check again later.</p>
+      <h1 class="text-9xl font-bold animate-waving-hand animate-slide-in-top">
+        No.
+      </h1>
+      <div class="animate-slide-in-bottom">
+        <p class="text-lg mt-12">
+          {getRandomReason()}
+        </p>
+        <p class="text-xs mt-6 text-slate-300">Please check again later.</p>
+        <p class="text-xs mt-1 text-slate-300 underline cursor-pointer">
+          <a href="http://is-dan-tired-of.me/">Refresh?</a>
+        </p>
+      </div>
     </div>
 
     <div class="py-4 text-center">
@@ -19,7 +44,8 @@ import Layout from "../layouts/Layout.astro";
       <p class="text-[11px] mt-1">
         <a
           href="https://danielagg.com/"
-          class="underline text-slate-200 hover:text-slate-400">danielagg.com</a
+          class="underline cursor-pointer text-slate-100 hover:text-slate-300"
+          >danielagg.com</a
         >
       </p>
     </div>

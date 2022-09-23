@@ -1,0 +1,33 @@
+---
+import Layout from "../layouts/Layout.astro";
+---
+
+<Layout title="Is Dan tired of Me?">
+  <main
+    class="flex flex-col items-center justify-between w-screen h-screen bg-slate-800 text-slate-300 px-12 lg:px-0"
+  >
+    <div class="h-full flex flex-col justify-center items-center text-center">
+      <h1 class="text-9xl font-bold">No.</h1>
+      <p class="text-lg mt-12">
+        Unfortunately, Dan is not tired of you right now.
+      </p>
+      <p class="text-xs mt-4 text-slate-400">Please check again later.</p>
+    </div>
+
+    <div class="py-4 text-center">
+      <p class="text-xs">&copy; Daniel Agg, {new Date().getFullYear()}.</p>
+      <p class="text-[11px] mt-1">
+        <a
+          href="https://danielagg.com/"
+          class="underline text-slate-200 hover:text-slate-400">danielagg.com</a
+        >
+      </p>
+    </div>
+  </main>
+</Layout>
+
+<style>
+  :root {
+    --astro-gradient: linear-gradient(0deg, #4f39fa, #da62c4);
+  }
+</style>
